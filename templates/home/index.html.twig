@@ -1,6 +1,14 @@
 {% extends 'base.html.twig' %} {% block title %}Hello HomeController!{% endblock
 %} {% block body %}
 <h1>Nos véhicules</h1>
-{% for vehicle in vehicles %} {% include 'components/_vehicle_card.html.twig'
-with { marque: vehicle.marque, model: vehicle.model, km: vehicle.km,
-type:vehicle.type} %} {%endfor%} {% endblock %}
+{% for vehicle in vehicles %}
+
+{% include 'components/_vehicle_card.html.twig'
+with {
+        marque: vehicle.marque, 
+        model: vehicle.model, 
+        km: vehicle.km,
+        type:vehicle.type
+    } 
+%} 
+{%endfor%} {% endblock %}
