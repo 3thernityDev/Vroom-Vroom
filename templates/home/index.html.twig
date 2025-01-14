@@ -1,14 +1,12 @@
-{% extends 'base.html.twig' %} {% block title %}Accueil{% endblock
-%} {% block body %}
-<h1>Nos véhicules</h1>
-{% for vehicle in vehicles %}
+{% extends 'base.html.twig' %} {% block title %}Accueil{% endblock %} {% block
+body %} {% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('styles/card.css') }}" />
+{% endblock %}
 
-{% include 'components/_vehicle_card.html.twig'
-with {
-        marque: vehicle.marque, 
-        model: vehicle.model, 
-        km: vehicle.km,
-        type:vehicle.type
-    } 
-%} 
+<h1>Nos véhicules</h1>
+<div class="card-container">
+    {% for vehicle in vehicles %} {% include
+    'components/_vehicle_card.html.twig' with { marque: vehicle.marque, model:
+    vehicle.model, km: vehicle.km, type:vehicle.type } %}
+</div>
 {%endfor%} {% endblock %}
